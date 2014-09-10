@@ -13,6 +13,14 @@ p{font-family: 'Montserrat', sans-serif; font-size:16px; margin:0;}
 .montserrat{font-family: 'Montserrat', sans-serif;}
 .yanone{font-family: 'Yanone Kaffeesatz', sans-serif;}
 */
+
+/**************************************************************
+text
+**************************************************************/
+.legal {font-size:10px; text-align:center; padding-bottom:20px;}
+.fnav {text-align:center; font-size:28px; margin-top:0px; margin-bottom:20px;}
+.shadow{-webkit-box-shadow:  .5px 2px 2px 1px rgba(0, 0, 0, 0.1); box-shadow:  .5px 2px 2px 1px rgba(0, 0, 0, 0.1);}
+
 .stage {margin:0 auto; width:100%; max-width:960px; height:100%; background-color:#ededed; display:block;}
 
 #header{background-color:#ededed;}
