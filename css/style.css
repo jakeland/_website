@@ -28,8 +28,16 @@ text
 #home{position:relative; display:block; }
 #home .content{padding-left:20px; }
 
+#about{position:relative; display:block; }
+#about .content{padding-left:20px; }
+
+#experience{position:relative; display:block; }
+#experience .content{padding-left:20px; }
+
 .jumbotron {background-color:#bdbdbd;}
 .jumbotron img{width:100%; height:auto;}
+
+img{width:100%;height:auto;}
 
 .hidden-row{display:none;}
 
@@ -151,6 +159,8 @@ End Carousel
 	display:block;
 
 	}
+	.top{margin-top:0px;}
+	.bottom{margin-bottom:0px;}
 
 	.logo{margin-top:50px; float:right;}
 }
