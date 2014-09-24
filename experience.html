@@ -13,7 +13,9 @@
     <!-- Bootstrap core CSS -->
     <link href="./css/bootstrap.min.css" rel="stylesheet">
     <link href="./css/style.css" rel="stylesheet">
-    
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.13.2/TweenMax.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.13.2/utils/jquery.gsap.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.13.2/plugins/ScrollToPlugin.min.js"></script>
 
    
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -198,8 +200,14 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="./js/bootstrap.min.js"></script>
     <script>
+        
         $( window ).load(function(){
-            var height = $(".stage").css("height");
+            var $all = $(".all");
+            CSSPlugin.defaultTransformPerspective = 200;
+            TweenMax.set($all, {transformStyle: "perserve-3d", perspective:200});
+            
+            TweenMax.staggerFrom(($all), 1, {alpha:0,z:-800,}, 0.2);
+        
             
         });
 
