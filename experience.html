@@ -112,57 +112,55 @@
                     </div>
                 </div>
             </div>
-            <p>All Professional Web Development Ux 3D Modeling</p>
-            <div class="row mb-0">
+            <p><a href="#" id="all">All</a> <a href="#" id = "prof">Professional</a> <a href="#">Web Development</a> <a href="#">Ux</a> <a href="#">3D Modeling</a></p>
+            <div class="row hold">
 
-                        <div class = "col-sm-4 mb-20 mt-20">
-                            <div class = "all prof web">
-                                <img id = "idx" src="http://placehold.it/300x175">
+                        <div class = "col-sm-4 mb-20 mt-20 all prof web">
+                            <div id = "idx" class = "">
+                                <img  src="http://placehold.it/300x175">
                             </div>
                         </div>
-                        <div class = "col-sm-4 mb-20 mt-20">
-                            <div class = "all model">
+                        <div class = "col-sm-4 mb-20 mt-20 all model">
+                            <div class = "">
                                 <img id = "fish" src="http://placehold.it/300x175">
                             </div>
                         </div>                        
-                        <div class = "col-sm-4 mb-20 mt-20 bottom">
-                            <div class = "all prof web">
+                        <div class = "col-sm-4 mb-20 mt-20 bottom all prof web">
+                            <div class = "">
                                 <img id = "medical bag" src="http://placehold.it/300x175">
                             </div>
                         </div>         
                     
-            </div>
-             <div class="row mt-0 mb-0">
-                        <div class = "col-sm-4 mb-20 mt-20 top ">
-                            <div class = "all ux">
+            
+                        <div class = "col-sm-4 mb-20 mt-20 top all ux ">
+                            <div class = "">
                                 <img id = "surveys" src="http://placehold.it/300x175">
                             </div>
                         </div>
-                        <div class = "col-sm-4 mb-20 mt-20">
-                            <div class = "all model">
+                        <div class = "col-sm-4 mb-20 mt-20 all model">
+                            <div class = "">
                                 <img id = "dog" src="http://placehold.it/300x175">
                             </div>
                         </div>                        
-                        <div class = "col-sm-4 mb-20 mt-20 bottom">
-                            <div class = "all ux">
+                        <div class = "col-sm-4 mb-20 mt-20 bottom all ux">
+                            <div class = "">
                                 <img id = "Ux" src="http://placehold.it/300x175">
                             </div>
                         </div>         
                     
-            </div>
-             <div class="row mt-0">
-                        <div class = "col-sm-4 mb-20 mt-20 top">
-                            <div class = "all prof 3d">
+           
+                        <div class = "col-sm-4 mb-20 mt-20 top all prof 3d">
+                            <div class = "">
                                 <img id = "terminal" src="http://placehold.it/300x175">
                             </div>
                         </div>
-                        <div class = "col-sm-4 mb-20 mt-20">
-                            <div class = "all ux">
+                        <div class = "col-sm-4 mb-20 mt-20 all ux">
+                            <div class = "">
                                 <img id = "UI" src="http://placehold.it/300x175">
                             </div>
                         </div>                        
-                        <div class = "col-sm-4 mb-20 mt-20">
-                            <div class = "all">
+                        <div class = "col-sm-4 mb-20 mt-20 all">
+                            <div class = "">
                                 <img id = "skills" src="http://placehold.it/300x175">
                             </div>
                         </div>         
@@ -201,18 +199,63 @@
     <script src="./js/bootstrap.min.js"></script>
     <script>
         
+
+        var $all = $(".all");
+        var $prof =$(".prof");
+        var width =$(".all").css("width");
+        var padding =$(".all").css("padding");
+
+        function wait(bttn){
+            if(bttn = "prof")
+            {
+                console.log("did it do it?")
+                TweenMax.delayedCall(2, profBox);
+
+            }
+
+        }
+        function profBox(){
+                $all.css("display", "none");
+                $prof.css("display", "block");
+                 TweenMax.staggerFromTo(($prof), 0.5, {alpha:0,z:-1600,rotationX:360}, {alpha:1, z:0, rotationX:0}, 0.2);
+            }
+  $("#all").click(function() {
+            var check = $all.css("display");
+            if(check =  "none")
+            {
+                $all.css("display", "block");
+            }
+            TweenMax.set($all, {alpha:1});
+            TweenMax.staggerFromTo(($all), 0.5, {alpha:0,z:-1600,rotationX:360}, {alpha:1, z:0, rotationX:0}, 0.2);
+            
+
+              });
+ $("#prof").click(function(){
+            TweenMax.staggerTo(($all), 1, {alpha:0,z: 300, rotationX:360,  onComplete:wait("prof")}, 0.2);
+            
+            
+            
+             });
+
+
+
         $( window ).load(function(){
-            var $all = $(".all");
-            CSSPlugin.defaultTransformPerspective = 200;
+            
+            CSSPlugin.defaultTransformPerspective = 0;
             TweenMax.set($all, {transformStyle: "perserve-3d", perspective:200});
             
-            TweenMax.staggerFrom(($all), 1, {alpha:0,z:-800,}, 0.2);
+            TweenMax.staggerFromTo(($all), 0.5, {alpha:0,z:-1600,rotationX:360}, 0.2);
         
+
+
+             
+
+            
+
             
         });
 
-
-
+       
 
     </script>
   </body>
