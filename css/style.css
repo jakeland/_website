@@ -35,7 +35,7 @@ text
 #experience{position:relative; display:block; }
 #experience .content{padding-left:20px; }
 #experience .all{overflow:hidden;}
-.hold{min-height: 745px;}
+.hold{height: auto;}
 .jumbotron {background-color:#bdbdbd;}
 .jumbotron img{width:100%; height:auto;}
 
