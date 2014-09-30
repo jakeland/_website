@@ -39,7 +39,7 @@
                                 
                                 |
                                 
-                                 <a href="#">ABOUT</a> 
+                                 <a href="file:///C:/Users/Jakeland/Documents/_website/about.html">ABOUT</a> 
                           
                                 |
                             
@@ -75,7 +75,7 @@
                             
                             |
                             
-                             <a href="#">ABOUT</a> 
+                             <a href="file:///C:/Users/Jakeland/Documents/_website/about.html">ABOUT</a> 
                       
                             |
                         
@@ -107,7 +107,26 @@
                     <div class = "intro pb-25">
                         <h1>Welcome!</h1>
                         <p>My name is Jacob McCarthy, but most people call me Jake.</p>
-                        <p>I'm a front-end web developer, 3D modeler, programmer, animator, and UI/game designer.</p>
+                        <div class = "fl">
+                            I'm: 
+                            <div id = "cycle1" class = "flr" >
+                                 &nbsp;a front-end web developer...
+                            </div>
+                            <div id = "cycle2" class = "flr" >
+                                 &nbsp;a 3D modeler...&nbsp;
+                            </div> 
+                            <div id = "cycle3" class = "flr" >
+                                 &nbsp;a programmer..&nbsp;
+                            </div> 
+                            <div id = "cycle4" class = "flr" >
+                                &nbsp;an animator...&nbsp;
+                            </div>
+                            <div id = "cycle5" class = "flr" >
+                                &nbsp;and a UI designer.&nbsp;
+                            </div>
+                        </div>   
+                        
+                        <span id="spin" class="glyphicon glyphicon-repeat"></span>
                         
                     </div>
 
@@ -138,7 +157,9 @@
                                     <div class="container">
                                         <div class="carousel-caption">
                                             <h1>Experience</h1>
+
                                             <p>A showcase of my skills in action.</p>
+
                                         </div>
                                     </div>
                                 </div>
@@ -147,7 +168,9 @@
                                     <div class="container">
                                         <div class="carousel-caption">
                                             <h1>Skills</h1>
-                                            <p>A Breakdown of what I can do.</p>
+
+                                            <p>A breakdown of what I can do.</p>
+
                                         </div>
                                     </div>
                                 </div>
@@ -205,6 +228,31 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="./js/bootstrap.min.js"></script>
- 
+    <script>
+            var $cycle1 = $('#cycle1');
+            var $cycle2 = $('#cycle2');
+            var $cycle3 = $('#cycle3');
+            var $cycle4 = $('#cycle4');
+            var $cycle5 = $('#cycle5');
+            var $spin = $('#spin');
+            var count = 0;
+        $(document).ready(function(){
+            
+
+            $cycle2.css("display",'none');
+            $cycle3.css("display",'none');
+            $cycle4.css("display",'none');
+            $cycle5.css("display",'none');
+
+            
+
+        });
+
+        $spin.click(function(){
+           
+        });
+
+    </script>
   </body>
+
 </html>
