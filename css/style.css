@@ -25,16 +25,34 @@ text
 .stage {margin:0 auto; width:100%; max-width:960px; height:100%; background-color:#ededed; display:block;}
 
 #header{background-color:#ededed;}
-
+/*
+Home
+*/
 #home{position:relative; display:block; }
 #home .content{padding-left:20px; }
+/*
+End Home
+*/
 
+/*
+About
+*/
 #about{position:relative; display:block; }
 #about .content{padding-left:20px; }
-
+/*
+End About
+*/
+/*
+Experience
+*/
 #experience{position:relative; display:block; }
 #experience .content{padding-left:20px; }
 #experience .all{overflow:hidden;}
+.exp_nav {text-align:center; }
+.exp_nav a{text-decoration:none; color:#000; font-family: 'Roboto Condensed', sans-serif;  font-size:20px;}
+/*
+End Experience
+*/
 .hold{min-height: 745px;}
 .jumbotron {background-color:#bdbdbd;}
 .jumbotron img{width:100%; height:auto;}
@@ -59,7 +77,7 @@ Nav Menu
 
 #nav_bttn1{padding-top:6px;padding-bottom:9px; width:100px; min-width:10px;}
 #nav_bttn2{padding-top:6px;padding-bottom:9px; width:100px; min-width:10px;}
-#nav_bttn3{padding-top:6px;padding-bottom:9px; width:100px; min-width:10px;}
+#nav_bttn3{padding-top:6px;padding-bottom:9px; width:100px; min-width:10px;}	
 #nav_bttn4{padding-top:6px;padding-bottom:9px; width:100px; min-width:10px;}
 /*
 End Nav Menu
@@ -77,6 +95,7 @@ Carousel
 /*
 End Carousel
 */
+
 
 .tc{text-align:center;}
 
@@ -144,6 +163,7 @@ End Carousel
 .plr-20{padding-right:20px; padding-left:20px;}
 .plr-25{padding-right:25px; padding-left:25px;}
 
+.fl{float:left;}
 .flr{float:right;}
 
 @media (max-width:850px){

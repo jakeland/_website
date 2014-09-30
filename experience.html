@@ -112,20 +112,22 @@
                     </div>
                 </div>
             </div>
-            <p><a href="#" id="all">All</a> <a href="#" id = "prof">Professional</a> <a href="#">Web Development</a> <a href="#">Ux</a> <a href="#">3D Modeling</a></p>
+            <div class = "exp_nav">
+            <p><a href="#" id="all">All</a> &nbsp; &nbsp; <a href="#" id = "prof">Professional</a> &nbsp; &nbsp; <a href="#" id="webdev">Web Development</a> &nbsp; &nbsp; <a href="#" id="ux">Ux</a> &nbsp; &nbsp; <a href="#" id="mod3d">3D Modeling</a></p>
+            </div>
             <div class="row hold">
 
-                        <div class = "col-sm-4 mb-20 mt-20 all prof web">
+                        <div class = "col-sm-4 mb-20 mt-20 all prof webdev">
                             <div id = "idx" class = "">
                                 <img  src="http://placehold.it/300x175">
                             </div>
                         </div>
-                        <div class = "col-sm-4 mb-20 mt-20 all model">
+                        <div class = "col-sm-4 mb-20 mt-20 all mod3d">
                             <div class = "">
                                 <img id = "fish" src="http://placehold.it/300x175">
                             </div>
                         </div>                        
-                        <div class = "col-sm-4 mb-20 mt-20 bottom all prof web">
+                        <div class = "col-sm-4 mb-20 mt-20 bottom all prof webdev">
                             <div class = "">
                                 <img id = "medical bag" src="http://placehold.it/300x175">
                             </div>
@@ -137,7 +139,7 @@
                                 <img id = "surveys" src="http://placehold.it/300x175">
                             </div>
                         </div>
-                        <div class = "col-sm-4 mb-20 mt-20 all model">
+                        <div class = "col-sm-4 mb-20 mt-20 all mod3d">
                             <div class = "">
                                 <img id = "dog" src="http://placehold.it/300x175">
                             </div>
@@ -149,7 +151,7 @@
                         </div>         
                     
            
-                        <div class = "col-sm-4 mb-20 mt-20 top all prof 3d">
+                        <div class = "col-sm-4 mb-20 mt-20 top all prof mod3d">
                             <div class = "">
                                 <img id = "terminal" src="http://placehold.it/300x175">
                             </div>
@@ -202,15 +204,30 @@
 
         var $all = $(".all");
         var $prof =$(".prof");
-        var width =$(".all").css("width");
-        var padding =$(".all").css("padding");
+        var $webdev =$(".webdev")
+        var $ux = $(".ux")
+        var $mod3d = $(".mod3d")
 
         function wait(bttn){
-            if(bttn = "prof")
+            if(bttn == "prof")
             {
-                console.log("did it do it?")
+                
                 TweenMax.delayedCall(2, profBox);
 
+            }
+            if(bttn == ("webdev"))
+            {
+               TweenMax.delayedCall(2, webdevBox);
+            }
+
+            if(bttn =="ux")
+            {
+               TweenMax.delayedCall(2,uxBox);
+            }
+
+            if(bttn =="mod3d")
+            {
+               TweenMax.delayedCall(2,mod3dBox);
             }
 
         }
@@ -219,29 +236,74 @@
                 $prof.css("display", "block");
                  TweenMax.staggerFromTo(($prof), 0.5, {alpha:0,z:-1600,rotationX:360}, {alpha:1, z:0, rotationX:0}, 0.2);
             }
-  $("#all").click(function() {
-            var check = $all.css("display");
-            if(check =  "none")
-            {
-                $all.css("display", "block");
+         function webdevBox(){
+                $all.css("display", "none");
+                $webdev.css("display", "block");
+                 TweenMax.staggerFromTo(($webdev), 0.5, {alpha:0,z:-1600,rotationX:360}, {alpha:1, z:0, rotationX:0}, 0.2);
             }
-            TweenMax.set($all, {alpha:1});
-            TweenMax.staggerFromTo(($all), 0.5, {alpha:0,z:-1600,rotationX:360}, {alpha:1, z:0, rotationX:0}, 0.2);
-            
+        function uxBox(){
+                $all.css("display", "none");
+                $ux.css("display", "block");
+                 TweenMax.staggerFromTo(($ux), 0.5, {alpha:0,z:-1600,rotationX:360}, {alpha:1, z:0, rotationX:0}, 0.2);
+            }
+        function mod3dBox(){
+                $all.css("display", "none");
+                $mod3d.css("display", "block");
+                 TweenMax.staggerFromTo(($mod3d), 0.5, {alpha:0,z:-1600,rotationX:360}, {alpha:1, z:0, rotationX:0}, 0.2);
+            }
 
-              });
- $("#prof").click(function(){
-            TweenMax.staggerTo(($all), 1, {alpha:0,z: 300, rotationX:360,  onComplete:wait("prof")}, 0.2);
-            
-            
+
+          $("#all").click(function() {
+                        var check = $all.css("display");
+                        if(check =  "none")
+                        {
+                            $all.css("display", "block");
+                        }
+                        TweenMax.set($all, {alpha:1});
+                        TweenMax.staggerFromTo(($all), 0.5, {alpha:0,z:-1600,rotationX:360}, {alpha:1, z:0, rotationX:0}, 0.2);
+                        
+
+          });
+             $("#prof").click(function(){
+                     
+                            
+                    TweenMax.to(($all), 1, {alpha:0,z: 100, onComplete:wait("prof")}, 0.2);
+                            
+                
             
              });
+
+          $("#webdev").click(function(){
+             var check = $all.css("display");
+                    
+                    TweenMax.staggerTo(($all), 1, {alpha:0,z: 100, onComplete:wait("webdev")}, 0.2);
+                    
+                    
+            
+             });
+
+          $("#ux").click(function(){
+             var check = $all.css("display");
+                    
+                    TweenMax.staggerTo(($all), 1, {alpha:0,z: 100, onComplete:wait("ux")}, 0.2);
+                    
+                    
+
+         });
+          $("#mod3d").click(function(){
+             var check = $all.css("display");
+                    
+                    TweenMax.staggerTo(($all), 1, {alpha:0,z: 100, onComplete:wait("mod3d")}, 0.2);
+                    
+                    
+                    
+         });
 
 
 
         $( window ).load(function(){
             
-            CSSPlugin.defaultTransformPerspective = 0;
+            CSSPlugin.defaultTransformPerspective = 200;
             TweenMax.set($all, {transformStyle: "perserve-3d", perspective:200});
             
             TweenMax.staggerFromTo(($all), 0.5, {alpha:0,z:-1600,rotationX:360}, 0.2);
