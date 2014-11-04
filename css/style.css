@@ -26,6 +26,21 @@ text
 
 #header{background-color:#ededed;}
 /*
+Intro
+*/
+.show_first {display:block;}
+.intro_stage { margin:0 auto; margin-top: 30px; height:auto; width:100%; max-width: 960px; background-color:#ededed; display:block;}
+.intro1 {position:relative; width: auto; height:auto;}
+.intro2 {height:auto; width:auto; margin: 0 auto; position:absolute;}
+#door1 {z-index: 10;}
+#gear {z-index: 20; overflow:hidden;}
+.show_second {display:none;}
+/*
+End Intro
+*/
+
+
+/*
 Home
 */
 #home{position:relative; display:block; }
@@ -42,6 +57,8 @@ About
 /*
 End About
 */
+
+
 /*
 Experience
 */

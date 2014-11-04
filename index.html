@@ -24,7 +24,23 @@
   </head>
 
   <body>
-    <div class="stage">
+   <div class = "intro_stage show_first">
+        
+          <div class = "container-fluid intro1">
+                   <div id = "door1" class = "intro2">
+                        <img src = "./img/door1.png">
+
+                   </div>
+                   <div id = "door2" class = "intro2">
+                        <img src = "./img/door2.png">
+                   </div>
+                   <div id = "gear" class = "intro2">
+                        <img src="./img/gear.png" id = "spin_load">   
+                   </div>
+           </div>
+        
+   </div>
+    <div class="stage show_second">
         <div class="container-fluid">  
             <div class="container-fluid" id="hidden-holder">
                 <div class="row hidden-row">
@@ -228,7 +244,23 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="./js/bootstrap.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.14.2/TweenMax.min.js"></script>
     <script>
+    //intro script
+        var $spin_load =$('#spin_load');
+
+        window.onload = function(){
+            TweenLite.to($spin_load, 1, {rotation:"-360", transformOrigin: "43% 48.7%"});
+   }
+
+    </script>
+
+    <script>
+    //script for things that I am
+
+
+
+
             var $cycle1 = $('#cycle1');
             var $cycle2 = $('#cycle2');
             var $cycle3 = $('#cycle3');
