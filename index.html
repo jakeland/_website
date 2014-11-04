@@ -249,9 +249,14 @@
     //intro script
         var $spin_load =$('#spin_load');
 
+
         window.onload = function(){
-            TweenLite.to($spin_load, 1, {rotation:"-360", transformOrigin: "43% 48.7%"});
+            document.getElementById("spin_load").onclick = function(){
+            TweenMax.to($spin_load, 1, {x:-100, rotation:"-720", transformOrigin: "43% 48.7%"});
+            }
    }
+
+
 
     </script>
 
