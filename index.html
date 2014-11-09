@@ -26,16 +26,15 @@
   <body>
    <div class = "intro_stage show_first">
         
-          <div class = "container-fluid intro1">
+          <div class = "intro1">
                    <div id = "door1" class = "intro2">
-                        <img src = "./img/door1.png">
-
+                         <img src = "./img/door1.png">
                    </div>
                    <div id = "door2" class = "intro2">
                         <img src = "./img/door2.png">
                    </div>
                    <div id = "gear" class = "intro2">
-                        <img src="./img/gear.png" id = "spin_load">   
+                        <img src="./img/gear1.png" id = "spin_load">   
                    </div>
            </div>
         
@@ -141,9 +140,9 @@
                                 &nbsp;and a UI designer.&nbsp;
                             </div>
                         </div>   
-                        
+                        <div id = "text_button">
                         <span id="spin" class="glyphicon glyphicon-repeat"></span>
-                        
+                        </div>
                     </div>
 
 
@@ -247,12 +246,39 @@
     <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.14.2/TweenMax.min.js"></script>
     <script>
     //intro script
-        var $spin_load =$('#spin_load');
 
+        var $spin_load =$('#spin_load');
+        var $stage = $('.stage');
+        var $show_first = $('.show_first');
+        function wait(){
+         TweenMax.delayedCall(0.5, showstage);
+         TweenMax.delayedCall(0.5, hidestage);
+        }
+        function slide(){
+
+            TweenMax.to($('#door1'), 1, {x:- 200, z:200, alpha:0});
+            TweenMax.to($('#door2'), 1, {x: 200,z:200, alpha:0});
+            TweenMax.to($('#gear'), 1, {x:-200,z:200, alpha:0});
+            wait();
+        }
+        function showstage(){
+            $stage.css("display","block");
+           
+
+            TweenMax.fromTo($stage, 3, {z:-1500, alpha:0}, {z:0, alpha:1});
+            
+        }
+
+        function hidestage(){
+            $show_first.css("display", "none");
+
+        }
+        CSSPlugin.defaultTransformPerspective = 1200;
+        TweenMax.set($stage, {transformStyle: "perserve-3d", perspective:1200});
 
         window.onload = function(){
             document.getElementById("spin_load").onclick = function(){
-            TweenMax.to($spin_load, 1, {x:-100, rotation:"-720", transformOrigin: "43% 48.7%"});
+            TweenMax.to($spin_load, 1, {x:-100, rotation:"-900", transformOrigin: "70%", onComplete:slide});
             }
    }
 
@@ -262,7 +288,8 @@
 
     <script>
     //script for things that I am
-
+            
+            var count = 0;
 
 
 
@@ -272,7 +299,7 @@
             var $cycle4 = $('#cycle4');
             var $cycle5 = $('#cycle5');
             var $spin = $('#spin');
-            var count = 0;
+            
         $(document).ready(function(){
             
 
@@ -285,9 +312,51 @@
 
         });
 
-        $spin.click(function(){
+        document.getElementById("text_button").onclick = function(){
+            switch(count){
+                case 0:
+                {
+                    $cycle1.css("display","none");
+                    $cycle2.css("display","block");
+                    count++;
+                    break;
+                }
+                 case 1:
+                {
+
+
+                    
+                    $cycle3.css("display","block");
+                     $cycle2.css("display",'none');
+                    count++;
+                    break;
+                }
+                 case 2:
+                {
+                     $cycle2.css("display",'none');
+                    $cycle3.css("display","none");
+                    $cycle4.css("display","block");
+                    count++;
+                    break;
+                }
+                 case 3:
+                {
+                    $cycle4.css("display","none");
+                    $cycle5.css("display","block");
+                    count++;
+                    break;
+                }
+                default:
+                {
+                    break;
+                }
+
+
+            }
+            
+
            
-        });
+        }
 
     </script>
   </body>
